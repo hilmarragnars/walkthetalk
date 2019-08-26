@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { GET_TODOS } from '../actions/types';
+import { GET_TODOS, DELETE_TODO } from '../actions/types';
 
 const initialState = {
   todos: []
@@ -10,7 +10,12 @@ export default (state = initialState, action) => {
     case GET_TODOS:
       return {
         ...state,
-        ...action.payload
+        todos: action.payload
+      };
+    case DELETE_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter(todo => todo.id != action.payload)
       };
     default:
       return state;

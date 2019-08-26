@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getTodos } from '../actions/todos';
+import { getTodos, deleteTodo } from '../actions/todos';
 import styled from 'styled-components';
 
 const TodoListWrapper = styled.div`
@@ -14,11 +14,18 @@ const TheTodoList = styled.ul`
 `
 const TodoListItem = styled.li`
 `
+const DeleteButton = styled.button`
+
+`
+
 
 class TodoList extends Component {
 
   static propTypes = {
     todos: PropTypes.array.isRequired,
+    getTodos: PropTypes.func.isRequired,
+    deleteTodo: PropTypes.func.isRequired
+
   };
 
   componentDidMount() {
@@ -29,21 +36,24 @@ class TodoList extends Component {
     return (
       <TodoListWrapper>
         <TodoListTitle>This is the TodoList</TodoListTitle>
-        <TheTodoList>{this.props.todos.map(todo => <TodoListItem key={todo.id}>{todo.title}</TodoListItem>)}</TheTodoList>
+        <TheTodoList>
+          {this.props.todos.map(todo =>
+            <TodoListItem key={todo.id}>
+              {todo.title}
+              <DeleteButton onClick={this.props.deleteTodo.bind(this, todo.id)}>Delete</DeleteButton>
+            </TodoListItem>
+          )}
+        </TheTodoList>
       </TodoListWrapper>
     );
   }
 }
 
-//TODO find out why 'todos: state.todos.todos' is not working
-const mapStateToProps = state => {
-  return {
-    todos: Object.values(state.todos)
-  }
-};
+const mapStateToProps = state => ({
+  todos: state.todos.todos
+});
 
 export default connect(
   mapStateToProps,
-  { getTodos }
+  { getTodos, deleteTodo }
 )(TodoList);
-
