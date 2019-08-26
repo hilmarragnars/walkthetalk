@@ -2,7 +2,7 @@
 
 # Django / React / Webpack stuff
 venv/*
-db.sqlite3
+# db.sqlite3
 *.pyc
 webpack-stats.json
 assets/bundles
