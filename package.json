@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --watch true",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "postinstall": "npm run build"
+  },
+  "engines": {
+    "node": "8.2.1",
+    "npm": "6.4.1"
   },
   "keywords": [],
   "author": "",

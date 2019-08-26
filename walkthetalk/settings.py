@@ -25,7 +25,8 @@ SECRET_KEY = 'rf3l0!9w!gw9c^_+teog6q2ff#xf4as82y-0++edr^f(rfwtp_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['walkthetalk.herokuapp.com', '127.0.0.1:8000']
+
 
 
 # Application definition
@@ -131,3 +132,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
