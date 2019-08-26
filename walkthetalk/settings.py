@@ -25,7 +25,7 @@ SECRET_KEY = 'rf3l0!9w!gw9c^_+teog6q2ff#xf4as82y-0++edr^f(rfwtp_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['walkthetalk.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['walkthetalk.herokuapp.com', '127.0.0.1:8000', '127.0.0.1']
 
 
 

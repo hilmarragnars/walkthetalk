@@ -17,6 +17,10 @@ const TodoListItem = styled.li`
 
 class TodoList extends Component {
 
+  static propTypes = {
+    todos: PropTypes.array.isRequired,
+  };
+
   componentDidMount() {
     this.props.getTodos()
   }
@@ -31,21 +35,15 @@ class TodoList extends Component {
   }
 }
 
+//TODO find out why 'todos: state.todos.todos' is not working
 const mapStateToProps = state => {
   return {
     todos: Object.values(state.todos)
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getTodos: () => dispatch(getTodos())
-  }
-};
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { getTodos }
 )(TodoList);
 
-// export default TodoList
