@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Header from '../components/header.jsx'
-import TodoList from '../components/todo-list.jsx'
+// import TodoList from '../components/todo-list.jsx'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,7 +24,7 @@ class HomePage extends Component {
         <SiteLayout>
           <GlobalStyle />
           <Header/>
-          <TodoList/>
+          {/*<TodoList/>*/}
         </SiteLayout>
       </ThemeProvider>
     );
