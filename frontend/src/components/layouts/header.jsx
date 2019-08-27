@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HeaderWrapper = styled.div`
   background-color: #2170BF;
@@ -17,6 +18,8 @@ class HomePage extends Component {
     return (
       <HeaderWrapper>
         <HeaderTitle>Walk the Talk</HeaderTitle>
+        <Link to='/register'>Register></Link>
+        <Link to='/login'>Login></Link>
       </HeaderWrapper>
     );
   }

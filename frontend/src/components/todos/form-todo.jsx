@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect }  from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { addTodo } from '../actions/todos.js';
+import { addTodo } from '../../actions/todos.js';
 
 const FormWrapper = styled.div``
 const FormCaption = styled.h2``
@@ -61,7 +61,6 @@ export class FormTodo extends Component {
           </FormGroup>
         </Form>
       </FormWrapper>
-
     )
   }
 }

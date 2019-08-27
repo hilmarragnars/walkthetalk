@@ -1,8 +1,17 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from .serializers import TodoSerializer
 from .models import Todo
 
 
 class TodoView(viewsets.ModelViewSet):
+    permission_classes = {
+        permissions.IsAuthenticated
+    }
+
     serializer_class = TodoSerializer
-    queryset = Todo.objects.all()
+
+    def get_queryset(self):
+        return self.request.user.todos.all()
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)

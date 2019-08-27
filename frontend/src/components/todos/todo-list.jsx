@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getTodos, deleteTodo } from '../actions/todos';
+import { getTodos, deleteTodo } from '../../actions/todos';
 import styled from 'styled-components';
 
 const TodoListWrapper = styled.div`
