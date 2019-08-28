@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { tokenConfig } from './auth'
+import { tokenConfig } from './auth';
+import { returnErrors } from  './messages';
 import { GET_TODOS, DELETE_TODO, ADD_TODO } from './types';
 
 //TODO catch errors
@@ -12,9 +13,9 @@ export const getTodos = () => async (dispatch, getState) => {
       type: GET_TODOS,
       payload: res.data
     });
-  }catch(e) {
-    console.log("Get todos failed");
-    console.log(e);
+    console.log(res.data)
+  } catch(err) {
+      dispatch(returnErrors(err.response.data, err.response.status))
   }
 };
 
@@ -26,8 +27,8 @@ export const deleteTodo = (id) => async (dispatch, getState) => {
       type: DELETE_TODO,
       payload: id
     });
-  }catch(e) {
-    console.log(e);
+  }catch(err) {
+      dispatch(returnErrors(err.response.data, err.response.status))
   }
 };
 
@@ -39,7 +40,7 @@ export const addTodo = (todo) => async (dispatch, getState) => {
       type: ADD_TODO,
       payload: res.data
     });
-  }catch(e) {
-    console.log(e);
+  }catch(err) {
+      dispatch(returnErrors(err.response.data, err.response.status))
   }
 };

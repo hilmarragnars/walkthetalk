@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { returnErrors } from "./messages";
 import {
   USER_LOADING,
   USER_LOADED,
@@ -22,7 +23,8 @@ export const loadUser = () => (dispatch, getState) => {
         type: USER_LOADED,
         payload: res.data
       });
-    }).catch(e => {
+    }).catch(err => {
+      dispatch(returnErrors(err.response.data, err.response.status));
       dispatch({
         type: AUTH_ERROR
       });
@@ -44,8 +46,8 @@ export const login = (username, password) => dispatch => {
         type: LOGIN_SUCCESS,
         payload: res.data
       });
-    }).catch(e => {
-      console.log(e)
+    }).catch(err => {
+      dispatch(returnErrors(err.response.data, err.response.status));
       dispatch({
         type: LOGIN_FAIL
       });
@@ -60,8 +62,8 @@ export const logout = () => (dispatch, getState) => {
       dispatch({
         type: LOGOUT_SUCCESS
       });
-    }).catch(e => {
-      console.log(e);
+    }).catch(err => {
+      dispatch(returnErrors(err.response.data, err.response.status));
     });
 };
 
@@ -80,8 +82,8 @@ export const register = ({username, password, email}) => dispatch => {
         type: REGISTER_SUCCESS,
         payload: res.data
       });
-    }).catch(e => {
-      console.log(e)
+    }).catch(err => {
+      dispatch(returnErrors(err.response.data, err.response.status));
       dispatch({
         type: REGISTER_FAIL
       });
@@ -99,4 +101,5 @@ export const tokenConfig = getState => {
   if(token) {
     config.headers['Authorization'] = `Token ${token}`;
   };
+  return config;
 };
