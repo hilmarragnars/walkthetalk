@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getTodos, deleteTodo } from '../../actions/todos';
 import styled from 'styled-components';
+import FlexBox from '../custom-styles/flex-box.jsx'
+import Button from '../custom-styles/button.jsx'
 
 const TodoListWrapper = styled.div`
-  margin: 0 16px;
 `
-const TodoListTitle = styled.h2`
-`
+const TodoListTitle = styled.h2``
 const TheTodoList = styled.ul`
   list-style: none;
+  padding-left: 0;
 `
-const TodoListItem = styled.li`
-`
-const DeleteButton = styled.button`
-
+const TodoListItem = styled.li``
+const DeleteButton = styled(Button)`
+  font-size: 10px;
 `
 
 
@@ -34,17 +34,17 @@ class TodoList extends Component {
 
   render() {
     return (
-      <TodoListWrapper>
-        <TodoListTitle>This is the TodoList</TodoListTitle>
+      <FlexBox column alignCenter>
+        <TodoListTitle>TodoList</TodoListTitle>
         <TheTodoList>
           {this.props.todos.map(todo =>
             <TodoListItem key={todo.id}>
               {todo.title}
-              <DeleteButton onClick={this.props.deleteTodo.bind(this, todo.id)}>Delete</DeleteButton>
+              <DeleteButton secondary onClick={this.props.deleteTodo.bind(this, todo.id)}>Delete</DeleteButton>
             </TodoListItem>
           )}
         </TheTodoList>
-      </TodoListWrapper>
+      </FlexBox>
     );
   }
 }

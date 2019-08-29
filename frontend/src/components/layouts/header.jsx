@@ -6,17 +6,22 @@ import { Link } from 'react-router-dom';
 
 import { logout } from '../../actions/auth.js'
 
-const HeaderWrapper = styled.div`
+import Container from '../custom-styles/container.jsx'
+import FlexBox from '../custom-styles/flex-box.jsx'
+import Button from '../custom-styles/button.jsx'
+
+const HeaderContainer = styled(Container)`
   background-color: #2170BF;
 `
 const HeaderTitle = styled.h1`
   color: #ffffff;
   font-size: ${props => props.theme.fontSizeXL};
   text-align: center;
-  margin-top: 0;
+  margin: 0;
 `
-const LinkWrapper = styled.div``
-const LogoutButton = styled.button``
+const LinkWrapper = styled.div`
+
+`
 const Welcome = styled.span``
 
 class HomePage extends Component {
@@ -31,22 +36,24 @@ class HomePage extends Component {
     const authLinks = (
       <LinkWrapper>
         <Welcome>{user ? `Welcome ${user.username}` : ''}</Welcome>
-        <LogoutButton onClick={this.props.logout}>Logout</LogoutButton>
+        <Button onClick={this.props.logout}>Logout</Button>
       </LinkWrapper>
     );
 
     const guestLinks = (
       <LinkWrapper>
-        <Link to='/register'>Register></Link>
-        <Link to='/login'>Login></Link>
+        <Link to='/register'><Button>Register</Button></Link>
+        <Link to='/login'><Button>Login</Button></Link>
       </LinkWrapper>
     );
 
     return (
-      <HeaderWrapper>
-        <HeaderTitle>Walk the Talk</HeaderTitle>
-        {isAuthenticated ? authLinks : guestLinks}
-      </HeaderWrapper>
+      <HeaderContainer>
+        <FlexBox column alignCenter>
+          <HeaderTitle>Walk the Talk</HeaderTitle>
+          {isAuthenticated ? authLinks : guestLinks}
+        </FlexBox>
+      </HeaderContainer>
     );
   }
 }

@@ -3,6 +3,8 @@ import { connect }  from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { addTodo } from '../../actions/todos.js';
+import FlexBox from '../custom-styles/flex-box.jsx';
+import Button from '../custom-styles/button.jsx';
 
 const FormWrapper = styled.div``
 const FormCaption = styled.h2``
@@ -10,7 +12,6 @@ const Form = styled.form``
 const FormGroup = styled.div``
 const Label = styled.label``
 const Input = styled.input``
-const Button = styled.button``
 
 
 export class FormTodo extends Component {
@@ -35,32 +36,34 @@ export class FormTodo extends Component {
   render() {
     const { title, description } = this.state;
     return (
-      <FormWrapper>
-        <FormCaption>Add todo</FormCaption>
-        <Form onSubmit={this.onSubmit}>
-          <FormGroup>
-            <Label>Title</Label>
-            <Input
-              type="text"
-              name="title"
-              onChange={this.onChange}
-              value={title}>
-            </Input>
-          </FormGroup>
-          <FormGroup>
-            <Label>Description</Label>
-            <Input
-              type="text"
-              name="description"
-              onChange={this.onChange}
-              value={description}>
-            </Input>
-          </FormGroup>
-          <FormGroup>
-            <Button type="submit">Submit</Button>
-          </FormGroup>
-        </Form>
-      </FormWrapper>
+      <FlexBox column alignCenter justifyCenter>
+        <FormWrapper>
+          <FormCaption>Add todo</FormCaption>
+          <Form onSubmit={this.onSubmit}>
+            <FormGroup>
+              <Label>Title</Label>
+              <Input
+                type="text"
+                name="title"
+                onChange={this.onChange}
+                value={title}>
+              </Input>
+            </FormGroup>
+            <FormGroup>
+              <Label>Description</Label>
+              <Input
+                type="text"
+                name="description"
+                onChange={this.onChange}
+                value={description}>
+              </Input>
+            </FormGroup>
+            <FormGroup>
+              <Button type="submit">Submit</Button>
+            </FormGroup>
+          </Form>
+        </FormWrapper>
+      </FlexBox>
     )
   }
 }

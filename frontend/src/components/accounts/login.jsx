@@ -3,6 +3,9 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Container from '../custom-styles/container.jsx';
+import FlexBox from '../custom-styles/flex-box.jsx';
+import Button from '../custom-styles/button.jsx';
 import { login } from '../../actions/auth.js';
 
 const FormWrapper = styled.div``
@@ -11,7 +14,7 @@ const Form = styled.form``
 const FormGroup = styled.div``
 const Label = styled.label``
 const Input = styled.input``
-const Button = styled.button``
+// const Button = styled.button``
 const LoginText = styled.p``
 
 export class Login extends Component {
@@ -38,35 +41,39 @@ export class Login extends Component {
     }
     const { username, email, password, password2 } = this.state
     return (
-      <FormWrapper>
-        <FormCaption>Login</FormCaption>
-        <Form onSubmit={this.onSubmit}>
-          <FormGroup>
-            <Label>Username</Label>
-            <Input
-              type="text"
-              name="username"
-              onChange={this.onChange}
-              value={username}>
-            </Input>
-          </FormGroup>
-          <FormGroup>
-            <Label>Password</Label>
-            <Input
-              type="text"
-              name="password"
-              onChange={this.onChange}
-              value={password}>
-            </Input>
-          </FormGroup>
-          <FormGroup>
-            <Button type="submit">Login</Button>
-          </FormGroup>
-          <LoginText>
-            Don't have an account <Link to='/register'>Register</Link>
-          </LoginText>
-        </Form>
-      </FormWrapper>
+      <Container fullVertical>
+        <FlexBox justifyCenter>
+          <FormWrapper>
+            <FormCaption>Login</FormCaption>
+            <Form onSubmit={this.onSubmit}>
+              <FormGroup>
+                <Label>Username</Label>
+                <Input
+                  type="text"
+                  name="username"
+                  onChange={this.onChange}
+                  value={username}>
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label>Password</Label>
+                <Input
+                  type="text"
+                  name="password"
+                  onChange={this.onChange}
+                  value={password}>
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Button type="submit">Login</Button>
+              </FormGroup>
+              <LoginText>
+                Don't have an account <Link to='/register'>Register</Link>
+              </LoginText>
+            </Form>
+          </FormWrapper>
+        </FlexBox>
+      </Container>
     )
   }
 }
