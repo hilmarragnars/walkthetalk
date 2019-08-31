@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getTodos, deleteTodo } from '../../actions/todos';
 import styled from 'styled-components';
-import FlexBox from '../custom-styles/flex-box.jsx'
-import Button from '../custom-styles/button.jsx'
+import FlexBox from '../custom-styles/FlexBox.jsx'
+import Button from '../custom-styles/Button.jsx'
 
 const TodoListWrapper = styled.div`
 `

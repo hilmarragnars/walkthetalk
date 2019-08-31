@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 import { logout } from '../../actions/auth.js'
 
-import Container from '../custom-styles/container.jsx'
-import FlexBox from '../custom-styles/flex-box.jsx'
-import Button from '../custom-styles/button.jsx'
+import Container from '../custom-styles/Container.jsx'
+import FlexBox from '../custom-styles/FlexBox.jsx'
+import Button from '../custom-styles/Button.jsx'
 
 const HeaderContainer = styled(Container)`
   background-color: #2170BF;

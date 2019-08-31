@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Container from '../custom-styles/container.jsx'
-import FormTodo from '../todos/form-todo.jsx'
-import TodoList from '../todos/todo-list.jsx'
+import Container from '../custom-styles/Container.jsx'
+import FormTodo from '../todos/FormTodo.jsx'
+import TodoList from '../todos/TodoList.jsx'
 
 
 class HomePage extends Component {

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import Loader from './loader.jsx'
+import Loader from './Loader.jsx'
 
 const StyledButton = styled.button`
     border-radius: 5px;

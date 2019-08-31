@@ -10,13 +10,13 @@ import { Provider } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components'
 import store from "../store";
 import { loadUser } from "../actions/auth.js"
-import GlobalStyle from "./custom-styles/global-style"
+import GlobalStyle from "./custom-styles/GlobalStyle"
 
-import Header from './layouts/header.jsx';
-import HomePage from './layouts/home-page.jsx';
-import Login from './accounts/login.jsx';
-import Register from './accounts/register.jsx';
-import PrivateRoute from './common/private-route.js';
+import Header from './layouts/Header.jsx';
+import HomePage from './layouts/HomePage.jsx';
+import Login from './accounts/Login.jsx';
+import Register from './accounts/Register.jsx';
+import PrivateRoute from './common/PrivateRoute.js';
 
 const theme = {
   fontSizeXL: '64px'

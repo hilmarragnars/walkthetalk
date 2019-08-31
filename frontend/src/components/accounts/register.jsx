@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { register } from '../../actions/auth.js';
 
-import Container from '../custom-styles/container.jsx';
-import FlexBox from '../custom-styles/flex-box.jsx';
-import Button from '../custom-styles/button.jsx';
+import Container from '../custom-styles/Container.jsx';
+import FlexBox from '../custom-styles/FlexBox.jsx';
+import Button from '../custom-styles/Button.jsx';
 
 const FormWrapper = styled.div``
 const FormCaption = styled.h2``
