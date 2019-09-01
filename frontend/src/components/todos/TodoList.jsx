@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { getTodos, deleteTodo } from '../../actions/todos';
 import styled from 'styled-components';
 import FlexBox from '../custom-styles/FlexBox.jsx'
-import Button from '../custom-styles/Button.jsx'
+// import Button from '../custom-styles/Button.jsx'
+import { Button } from '@smooth-ui/core-sc';
 
 const TodoListWrapper = styled.div`
 `

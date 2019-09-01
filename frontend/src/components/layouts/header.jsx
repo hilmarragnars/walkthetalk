@@ -8,7 +8,7 @@ import { logout } from '../../actions/auth.js'
 
 import Container from '../custom-styles/Container.jsx'
 import FlexBox from '../custom-styles/FlexBox.jsx'
-import Button from '../custom-styles/Button.jsx'
+import { Button } from '@smooth-ui/core-sc';
 
 const HeaderContainer = styled(Container)`
   background-color: #2170BF;

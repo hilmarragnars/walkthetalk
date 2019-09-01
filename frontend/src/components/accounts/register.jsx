@@ -7,14 +7,12 @@ import { register } from '../../actions/auth.js';
 
 import Container from '../custom-styles/Container.jsx';
 import FlexBox from '../custom-styles/FlexBox.jsx';
-import Button from '../custom-styles/Button.jsx';
+
+import { Button, Input, Form, FormField, FormFieldLabel } from '@smooth-ui/core-sc';
 
 const FormWrapper = styled.div``
 const FormCaption = styled.h2``
-const Form = styled.form``
-const FormGroup = styled.div``
-const Label = styled.label``
-const Input = styled.input``
+// const Label = styled.label``
 const LoginText = styled.p``
 
 export class Register extends Component {
@@ -59,45 +57,45 @@ export class Register extends Component {
           <FormWrapper>
             <FormCaption>Register</FormCaption>
             <Form onSubmit={this.onSubmit}>
-              <FormGroup>
-                <Label>Username</Label>
+              <FormField>
+                <FormFieldLabel>Username</FormFieldLabel>
                 <Input
                   type="text"
                   name="username"
                   onChange={this.onChange}
                   value={username}>
                 </Input>
-              </FormGroup>
-              <FormGroup>
-                <Label>Email</Label>
+              </FormField>
+              <FormField>
+                <FormFieldLabel>Email</FormFieldLabel>
                 <Input
                   type="text"
                   name="email"
                   onChange={this.onChange}
                   value={email}>
                 </Input>
-              </FormGroup>
-              <FormGroup>
-                <Label>Password</Label>
+              </FormField>
+              <FormField>
+                <FormFieldLabel>Password</FormFieldLabel>
                 <Input
                   type="text"
                   name="password"
                   onChange={this.onChange}
                   value={password}>
                 </Input>
-              </FormGroup>
-              <FormGroup>
-                <Label>Password Again</Label>
+              </FormField>
+              <FormField>
+                <FormFieldLabel>Password Again</FormFieldLabel>
                 <Input
                   type="text"
                   name="password2"
                   onChange={this.onChange}
                   value={password2}>
                 </Input>
-              </FormGroup>
-              <FormGroup>
-                <Button type="submit">Register</Button>
-              </FormGroup>
+              </FormField>
+              <FormField>
+                <Button type="submit" variant="success" width="100%">Register</Button>
+              </FormField>
               <LoginText>
                 Already have an account <Link to='/login'>Login</Link>
               </LoginText>

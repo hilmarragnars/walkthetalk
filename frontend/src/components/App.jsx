@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { Provider } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components'
+import { Normalize } from '@smooth-ui/core-sc'
 import store from "../store";
 import { loadUser } from "../actions/auth.js"
 import GlobalStyle from "./custom-styles/GlobalStyle"
@@ -33,6 +34,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
+          <Normalize />
           <GlobalStyle />
           <ThemeProvider theme={theme}>
             <SiteWrapper>

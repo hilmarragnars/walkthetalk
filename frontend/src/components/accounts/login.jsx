@@ -3,18 +3,14 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import Container from '../custom-styles/Container.jsx';
 import FlexBox from '../custom-styles/FlexBox.jsx';
-import Button from '../custom-styles/Button.jsx';
+import { Button, Input, Form, FormField, FormFieldLabel } from '@smooth-ui/core-sc';
 import { login } from '../../actions/auth.js';
 
 const FormWrapper = styled.div``
 const FormCaption = styled.h2``
-const Form = styled.form``
-const FormGroup = styled.div``
-const Label = styled.label``
-const Input = styled.input``
-// const Button = styled.button``
 const LoginText = styled.p``
 
 export class Login extends Component {
@@ -46,27 +42,27 @@ export class Login extends Component {
           <FormWrapper>
             <FormCaption>Login</FormCaption>
             <Form onSubmit={this.onSubmit}>
-              <FormGroup>
-                <Label>Username</Label>
+              <FormField>
+                <FormFieldLabel>Username</FormFieldLabel>
                 <Input
                   type="text"
                   name="username"
                   onChange={this.onChange}
                   value={username}>
                 </Input>
-              </FormGroup>
-              <FormGroup>
-                <Label>Password</Label>
+              </FormField>
+              <FormField>
+                <FormFieldLabel>Password</FormFieldLabel>
                 <Input
                   type="text"
                   name="password"
                   onChange={this.onChange}
                   value={password}>
                 </Input>
-              </FormGroup>
-              <FormGroup>
-                <Button type="submit">Login</Button>
-              </FormGroup>
+              </FormField>
+              <FormField>
+                <Button type="submit" width="100%" variant="success">Login</Button>
+              </FormField>
               <LoginText>
                 Don't have an account <Link to='/register'>Register</Link>
               </LoginText>
