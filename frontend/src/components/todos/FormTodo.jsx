@@ -5,14 +5,9 @@ import styled from 'styled-components';
 import { addTodo } from '../../actions/todos.js';
 import FlexBox from '../custom-styles/FlexBox.jsx';
 import { Button, Input, Form, FormField, FormFieldLabel } from '@smooth-ui/core-sc';
-// import Button from '../custom-styles/Button.jsx';
 
 const FormWrapper = styled.div``
 const FormCaption = styled.h2``
-// const Form = styled.form``
-// const FormGroup = styled.div``
-// const Label = styled.label``
-// const Input = styled.input``
 
 
 export class FormTodo extends Component {
