@@ -6,7 +6,13 @@
   "scripts": {
     "dev": "webpack --mode development --watch true",
     "build": "webpack --mode production",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "test": "jest --watch true"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+        "<rootDir>/frontend/src/setupTests.js"
+    ]
   },
   "engines": {
     "node": "8.2.1",
@@ -21,6 +27,11 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.9.0",
     "webpack": "^4.39.2",
     "webpack-bundle-tracker": "^0.4.2-beta",
     "webpack-cli": "^3.3.7"
