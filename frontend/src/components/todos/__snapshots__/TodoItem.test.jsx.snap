@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem rendering correctly Renders correctly empty 1`] = `
+<li>
+  <p />
+  <styled(Button)
+    onClick={[Function]}
+  >
+    Delete
+  </styled(Button)>
+</li>
+`;
+
+exports[`TodoItem rendering correctly Renders correctly with a todo item 1`] = `
+<li>
+  <p>
+    Test todo items
+  </p>
+  <styled(Button)
+    onClick={[Function]}
+  >
+    Delete
+  </styled(Button)>
+</li>
+`;
