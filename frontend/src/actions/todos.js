@@ -13,7 +13,6 @@ export const getTodos = () => async (dispatch, getState) => {
       type: GET_TODOS,
       payload: res.data
     });
-    console.log(res.data)
   } catch(err) {
       dispatch(returnErrors(err.response.data, err.response.status))
   }
