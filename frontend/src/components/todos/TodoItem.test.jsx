@@ -26,3 +26,19 @@ describe('TodoItem rendering correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+
+describe('Delete button working correctly', () => {
+  it("Clicking delete button once works", () => {
+    const spy = sinon.spy();
+    const wrapper = mount(
+      <TodoItem todo={props.todo} onDelete={spy} />
+    );
+
+    wrapper
+      .find("button")
+      .first()
+      .simulate("click");
+
+    expect(spy.calledOnce).toBe(true);
+  });
+});
