@@ -13,10 +13,10 @@ import store from "../store";
 import { loadUser } from "../actions/auth.js"
 import GlobalStyle from "./custom-styles/GlobalStyle"
 
-import Header from './layouts/Header.jsx';
+import Header from './layouts/header.jsx';
 import HomePage from './layouts/HomePage.jsx';
-import Login from './accounts/Login.jsx';
-import Register from './accounts/Register.jsx';
+import Login from './accounts/login.jsx';
+import Register from './accounts/register.jsx';
 import PrivateRoute from './common/PrivateRoute.js';
 
 const theme = {
