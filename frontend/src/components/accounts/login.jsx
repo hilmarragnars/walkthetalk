@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Container from '../custom-styles/Container.jsx';
+import Container from '../custom-styles/container.jsx';
 import FlexBox from '../custom-styles/FlexBox.jsx';
 import { Button, Input, Form, FormField, FormFieldLabel } from '@smooth-ui/core-sc';
 import { login } from '../../actions/auth.js';

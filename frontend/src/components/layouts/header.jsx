@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { logout } from '../../actions/auth.js'
 
-import Container from '../custom-styles/Container.jsx'
+import Container from '../custom-styles/container.jsx'
 import FlexBox from '../custom-styles/FlexBox.jsx'
 import { Button } from '@smooth-ui/core-sc';
 
