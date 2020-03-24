@@ -28,7 +28,7 @@ class UserList extends Component {
     console.log(this.props.users)
     return (
       <FlexBox column alignCenter>
-        <UserListTitle>All Users</UserListTitle>
+        <UserListTitle>All Users, Same same</UserListTitle>
         <TheUserList>
           {this.props.users.map(user => (
             <UserItem key={user.id}>{user.username}</UserItem>
